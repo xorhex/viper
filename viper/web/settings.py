@@ -203,6 +203,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(__project__.base_path, "static/")
+if not os.path.exists(STATIC_ROOT):
+    os.makedirs(STATIC_ROOT)
 
 # Favicon https://pypi.python.org/pypi/django-favicon
 FAVICON_PATH = STATIC_URL + 'viperweb/images/favicon.png'
